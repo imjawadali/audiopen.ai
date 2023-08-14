@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 const webApis = require('./routes/webApis')
-app.use('/webApis', webApis)
+app.use('/api', webApis)
 
 app.use(express.static('web/build'))
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'web', 'build', 'index.html')))

@@ -1,4 +1,5 @@
 const express = require('express')
+const { authMiddleware } = require('../middlewares/authMiddleware')
 const router = express.Router()
 
 // middleware that is specific to any request on this router
@@ -7,12 +8,7 @@ router.use((req, res, next) => {
     next()
 })
 
-function authMiddleware(req, res, next) {
-    console.log('authMiddleware')
-    next()
-}
-
-router.get('/', (req, res) => {
+router.get('/', authMiddleware, (req, res) => {
     res.send({ messege: "success" })
 })
 

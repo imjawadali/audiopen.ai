@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "cd web && npm run build",
+    "install": "cd web && npm install",
     "start": "node index.js",
     "server": "nodemon index.js",
     "web": "npm run start --prefix web",
